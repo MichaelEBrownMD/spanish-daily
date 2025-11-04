@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tooltip Test — iPhone Safe</title>
+<style>
+  body { font-family: system-ui, sans-serif; font-size: 20px; line-height: 1.6; padding: 1rem; }
+  .tip {
+    all: unset; display: inline; position: relative; cursor: pointer;
+    text-decoration: underline dotted; text-underline-offset: 3px;
+    padding: 0 .1em; border-radius: .35em; background: rgba(255,235,59,.28);
+  }
+  .tooltip {
+    position: fixed; padding: .48rem .6rem; background: rgba(0,0,0,.88); color: #fff;
+    border-radius: .55rem; font-size: .95rem; line-height: 1.3;
+    max-width: min(90vw, 26rem); z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  }
+</style>
+</head>
+<body>
+<p>
+El <button class="tip" type="button" data-tip="heart">corazón</button> bombea la
+<button class="tip" type="button" data-tip="blood">sangre</button> por todo el cuerpo.
+</p>
+<p style="opacity:.75;font-size:.95rem">
+Sugerencia: toca una palabra subrayada para ver la traducción; toca fuera para cerrarla.
+</p>
+
+<script>
+  let openTip = null;
+  function closeTip(){ if(openTip){ openTip.remove(); openTip=null; } }
+  function showTip(target){
+    closeTip();
+    const text = target.getAttribute('data-tip') || '';
+    if(!text) return;
+    const tip = document.createElement('div');
+    tip.className='tooltip'; tip.textContent=text; document.body.appendChild(tip);
+    const r = target.getBoundingClientRect(), m=8, vw=innerWidth, vh=innerHeight;
+    const {width:tw,height:th} = tip.getBoundingClientRect();
+    let left=r.left, top=r.bottom+m;
+    if(left+tw+m>vw) left=Math.max(m, vw-tw-m);
+    if(left<m) left=m;
+    if(top+th+m>vh) top=Math.max(m, r.top-th-m);
+    tip.style.left=`${left}px`; tip.style.top=`${top}px`; openTip=tip;
+  }
+  document.addEventListener('click', (e)=>{
+    const btn=e.target.closest('.tip');
+    if(btn){ if(openTip){ closeTip(); } else { showTip(btn); } e.stopPropagation(); }
+    else{ closeTip(); }
+  });
+  document.addEventListener('touchstart', (e)=>{ if(!e.target.closest('.tip')) closeTip(); }, {passive:true});
+  addEventListener('scroll', closeTip, {passive:true});
+  addEventListener('resize', closeTip);
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeTip(); });
+</script>
+</body>
+</html>

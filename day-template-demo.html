@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish Daily — Demo</title>
+<meta name="color-scheme" content="light dark" />
+<style>
+  :root { --maxw: 800px; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji; line-height:1.6; font-size:18px; }
+  header, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+  header { padding-top: 20px; }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; }
+  .subtle { opacity:.72; font-size:.95rem; }
+  .card { border:1px solid rgba(0,0,0,.08); border-radius:12px; padding:14px; margin:12px 0; }
+
+  /* Upgraded word style */
+  .tip-word {
+    all: unset; display:inline; position:relative; cursor:pointer;
+    text-decoration: underline dotted; text-underline-offset:3px;
+    padding: 0 .1em; border-radius:.35em; background: rgba(255,235,59,.28);
+  }
+  .tooltip {
+    position: fixed; padding:.48rem .6rem; background: rgba(0,0,0,.88); color:#fff;
+    border-radius:.55rem; font-size:.95rem; line-height:1.3;
+    max-width: min(90vw, 26rem); z-index:9999; box-shadow:0 6px 18px rgba(0,0,0,.18);
+  }
+  audio { width: 100%; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Spanish Daily — Demo</h1>
+    <div class="subtle">Toca una palabra subrayada para ver la traducción. Toca fuera para cerrar.</div>
+  </header>
+
+  <main>
+    <section class="card content">
+      <!-- This mimics your n8n output: Spanish word + English in title -->
+      <p>
+        El <span title="heart">corazón</span> bombea la <span title="blood">sangre</span> por todo el cuerpo.
+      </p>
+    </section>
+
+    <section class="card">
+      <strong>Audio (demo)</strong>
+      <div class="subtle">3 voces (Narrador · Médico · Paciente)</div>
+      <audio controls preload="none" src="#"></audio>
+    </section>
+  </main>
+
+  <footer class="subtle">
+    <div>© Demo</div>
+  </footer>
+
+<script>
+  // Same upgrader used in your real template
+  (function () {
+    const container = document.querySelector('.content');
+    if (!container) return;
+
+    container.querySelectorAll('span[title]').forEach(span => {
+      const text = span.textContent;
+      const tip  = span.getAttribute('title');
+      const btn  = document.createElement('button');
+      btn.className = 'tip-word';
+      btn.type = 'button';
+      btn.textContent = text;
+      btn.setAttribute('data-tip', tip);
+      span.replaceWith(btn);
+    });
+
+    let openTip = null;
+    function closeTip(){ if(openTip){ openTip.remove(); openTip=null; } }
+    function showTip(target){
+      closeTip();
+      const tipText = target.getAttribute('data-tip') || '';
+      if(!tipText) return;
+      const bubble = document.createElement('div');
+      bubble.className = 'tooltip';
+      bubble.textContent = tipText;
+      document.body.appendChild(bubble);
+      const r = target.getBoundingClientRect();
+      const m = 8, vw = innerWidth, vh = innerHeight;
+      const { width: tw, height: th } = bubble.getBoundingClientRect();
+      let left = r.left, top = r.bottom + m;
+      if (left + tw + m > vw) left = Math.max(m, vw - tw - m);
+      if (left < m) left = m;
+      if (top + th + m > vh) top = Math.max(m, r.top - th - m);
+      bubble.style.left = left + 'px';
+      bubble.style.top  = top + 'px';
+      openTip = bubble;
+    }
+
+    document.addEventListener('click', (e) => {
+      const word = e.target.closest('.tip-word');
+      if (word) { if (openTip) closeTip(); else showTip(word); e.stopPropagation(); }
+      else { closeTip(); }
+    });
+    document.addEventListener('touchstart', (e) => {
+      if (!e.target.closest('.tip-word')) closeTip();
+    }, { passive:true });
+    addEventListener('scroll', closeTip, { passive:true });
+    addEventListener('resize', closeTip);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeTip(); });
+  }());
+</script>
+</body>
+</html>

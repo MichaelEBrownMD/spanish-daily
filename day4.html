@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish Daily – Nov 6, 2025</title>
+<meta name="color-scheme" content="light dark" />
+<style>
+  :root { --maxw: 800px; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; padding: 0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; line-height: 1.6; font-size: 18px; }
+  header, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+  header { padding-top: 20px; }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; }
+  .subtle { opacity: 0.72; font-size: 0.95rem; }
+  .card { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 14px; margin: 12px 0; }
+  /* Visual marking of difficult words (after upgrade) */
+  .tip-word { all: unset; display: inline; position: relative; cursor: pointer;
+    text-decoration: underline dotted; text-underline-offset: 3px;
+    padding: 0 .1em; border-radius: .35em; background: rgba(255,235,59,.28); }
+  .tooltip { position: fixed; padding: .48rem .6rem; background: rgba(0,0,0,.88); color: #fff;
+    border-radius: .55rem; font-size: .95rem; line-height: 1.3; max-width: min(90vw, 26rem);
+    z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  audio { width: 100%; margin-top: 8px; }
+  .download { display: inline-block; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Spanish Daily</h1>
+    <div class="subtle">Toca una palabra subrayada para ver la traducción. Toca fuera para cerrar.</div>
+  </header>
+
+  <main>
+    <section class="card content">
+      STORY
+
+<span title="Medication">Lecanemab</span> es un <span title="medication">medicamento</span> para la <span title="disease">enfermedad</span> de Alzheimer en etapa temprana. Se administra mediante una <span title="needle">aguja</span> en la vena cada dos semanas. Cada aplicación dura aproximadamente una hora. Es importante que los lugares donde se realiza este <span title="procedure">procedimiento</span> cuenten con el equipo adecuado y el <span title="staff">personal</span> necesario. 1. **Cómo administrar lecanemab**: Se administra mediante una aguja en la vena cada dos semanas. Cada aplicación dura aproximadamente una hora. Los lugares donde se aplica deben contar con lo necesario y suficiente personal. 2. **Vigilancia de los pacientes**: Los pacientes necesitan <span title="checkups">revisiones</span> regulares para detectar cambios en el <span title="brain">cerebro</span> relacionados con <span title="amyloid">amiloide</span>. Se requieren estudios cerebrales antes de iniciar el medicamento y en ciertos momentos durante el tratamiento. 3. **Quiénes deben recibir lecanemab**: Los pacientes adecuados son aquellos con problemas leves de memoria o <span title="mild dementia">demencia leve</span> por enfermedad de Alzheimer. Esto se confirma con una <span title="PET scan">tomografía PET</span> especial o pruebas en el <span title="spinal fluid">líquido de la columna</span> vertebral. Detectar la enfermedad temprano y referir al paciente a un <span title="specialist">especialista</span> es muy importante. 4. **Desafíos**: La falta de lugares para administrar el medicamento o de especialistas puede dificultar el inicio oportuno del tratamiento. Es necesario trabajar en conjunto con los sistemas de salud locales para ampliar la capacidad. 5. **Seguimiento continuo**: Es muy importante vigilar siempre el estado <span title="cognitive">cognitivo</span> del paciente y los efectos secundarios. Se recomienda acudir regularmente con médicos especialistas en <span title="neurology">neurología</span>. Qué significa esto para usted: Los médicos deben hacer planes claros para referir a los pacientes y trabajar en conjunto con los lugares que administran el medicamento. Así se asegura que los pacientes reciban lecanemab y los controles a tiempo.
+
+---
+DIALOGUE
+
+Narrator: Hoy, un <span title="doctor">médico</span> habla con un paciente sobre lecanemab para la enfermedad de Alzheimer.
+Physician: Hola. Quiero hablarle de un medicamento nuevo. Se llama lecanemab.
+Patient: ¿Qué es lecanemab?
+Physician: Lecanemab es para personas con enfermedad de Alzheimer en etapa temprana. Ayuda a retrasar la pérdida de memoria.
+Patient: ¿Cómo me lo dan?
+Physician: Administramos lecanemab con una aguja en la vena. Usted viene cada dos semanas. Cada visita dura una hora.
+Patient: ¿Es seguro?
+Physician: Revisaremos su cerebro con estudios antes de empezar. Haremos más estudios durante el tratamiento. También vigilamos los efectos secundarios.
+Patient: ¿Veré a un especialista en cerebro?
+Physician: Sí. Verá a un especialista con frecuencia. En cada visita revisamos su memoria y pensamiento.
+Patient: ¿Puedo recibirlo de inmediato?
+Physician: A veces no hay suficientes lugares o personal para administrar lecanemab. Trataremos de ayudarle a empezar pronto.
+Patient: Gracias, doctor.
+    </section>
+
+    <section class="card">
+      <strong>Audio</strong>
+      <div class="subtle">3 voces (Narrador · Médico · Paciente)</div>
+      <audio controls preload="none" src="/audio/2025-11-06.mp3"></audio>
+      <div><a class="download" href="/audio/2025-11-06.mp3" download>Descargar MP3 · Nov 6, 2025</a></div>
+    </section>
+  </main>
+
+  <footer class="subtle">
+    <div>© Nov 6, 2025 · Mezra.AI · Practica todos los días.</div>
+  </footer>
+
+<script>
+// Upgrade <span title="…">…</span> into buttons with floating tooltips (iPhone-safe)
+(function () {
+  const container = document.querySelector('.content');
+  if (!container) return;
+
+  container.querySelectorAll('span[title]').forEach(span => {
+    const text = span.textContent;
+    const tip  = span.getAttribute('title');
+    const btn  = document.createElement('button');
+    btn.className = 'tip-word'; btn.type = 'button';
+    btn.textContent = text; btn.setAttribute('data-tip', tip);
+    span.replaceWith(btn);
+  });
+
+  let openTip = null;
+  function closeTip(){ if(openTip){ openTip.remove(); openTip = null; } }
+  function showTip(target){
+    closeTip();
+    const tipText = target.getAttribute('data-tip') || '';
+    if(!tipText) return;
+    const bubble = document.createElement('div');
+    bubble.className = 'tooltip';
+    bubble.textContent = tipText;
+    document.body.appendChild(bubble);
+    const r = target.getBoundingClientRect();
+    const m = 8, vw = innerWidth, vh = innerHeight;
+    const { width: tw, height: th } = bubble.getBoundingClientRect();
+    let left = r.left, top = r.bottom + m;
+    if (left + tw + m > vw) left = Math.max(m, vw - tw - m);
+    if (left < m) left = m;
+    if (top + th + m > vh) top = Math.max(m, r.top - th - m);
+    bubble.style.left = left + 'px';
+    bubble.style.top  = top + 'px';
+    openTip = bubble;
+  }
+
+  document.addEventListener('click', (e) => {
+    const word = e.target.closest('.tip-word');
+    if (word){ if (openTip) closeTip(); else showTip(word); e.stopPropagation(); }
+    else { closeTip(); }
+  });
+  document.addEventListener('touchstart', (e) => {
+    if (!e.target.closest('.tip-word')) closeTip();
+  }, { passive: true });
+  addEventListener('scroll', closeTip, { passive: true });
+  addEventListener('resize', closeTip);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeTip(); });
+}());
+</script>
+</body>
+</html>

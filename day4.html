@@ -23,12 +23,21 @@
     border-radius: .55rem; font-size: .95rem; line-height: 1.3; max-width: min(90vw, 26rem);
     z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
 
-  /* Respect \n line breaks so each dialogue line goes to a new line */
+  /* Make 
+ line breaks show as new lines in both ES and EN blocks */
   .content { white-space: pre-line; }
 
   /* Small visual polish */
   .card { margin-bottom: 1.5em; line-height: 1.6; }
   strong { display: inline-block; margin-top: .35em; }
+
+  /* Details styling (English block) */
+  details { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 12px; }
+  details + details, details + .card { margin-top: 12px; }
+  summary { cursor: pointer; font-weight: 600; }
+  summary::marker { content: ""; }
+  summary::after { content: " ▸"; }
+  details[open] summary::after { content: " ▾"; }
 </style>
 </head>
 <body>
@@ -38,10 +47,8 @@
   </header>
 
   <main>
-    <!-- Spanish -->
+    <!-- Spanish first -->
     <section class="card content">
-HISTORIA
-
 STORY
 
 La <span title="chronic">enfermedad</span> renal crónica (<span title="CKD">ERC</span>) es un problema para muchas personas en todo el mundo. Las <span title="guidelines">guías</span> KDIGO 2024 indican que los <span title="inhibitors">inhibidores</span> de SGLT2 (iSGLT2) y los <span title="agonists">agonistas</span> del receptor GLP-1 (aGLP-1) son muy importantes para el manejo de la ERC. Esto se basa en <span title="evidence">evidencia</span> sólida que muestra que estos <span title="medications">medicamentos</span> son beneficiosos para los <span title="kidneys">riñones</span> y el <span title="heart">corazón</span>. 1. Los inhibidores de SGLT2, como <span title="empagliflozin">empagliflozina</span> y <span title="dapagliflozin">dapagliflozina</span>, han demostrado retrasar la <span title="progression">progresión</span> de la ERC. También disminuyen el riesgo de problemas cardíacos en los pacientes, incluso si no tienen <span title="diabetes">diabetes</span>. 2. Los agonistas del receptor GLP-1, como <span title="liraglutide">liraglutida</span> y <span title="semaglutide">semaglutida</span>, ofrecen protección adicional al corazón. También pueden retrasar la ERC, especialmente en pacientes con diabetes tipo 2. 3. Las guías sugieren considerar el uso de iSGLT2 en todos los pacientes con ERC, siempre que tengan una <span title="GFR">TFG</span> de 20 mL/min/1.73m² o más. No importa si tienen diabetes o no. Esto es porque estos medicamentos protegen los riñones. 4. Se debe considerar el uso de aGLP-1 en pacientes con diabetes tipo 2 y ERC, especialmente cuando el riesgo de problemas cardíacos es alto o cuando no se pueden usar iSGLT2. 5. Se recomienda usar ambos tipos de medicamentos junto con el tratamiento estándar, que incluye el control de la <span title="blood pressure">presión arterial</span> y el bloqueo del sistema <span title="RAAS system">RAAS</span>. Qué significa esto para la práctica: Los <span title="doctors">médicos</span> deben considerar el uso de iSGLT2 y aGLP-1 al elaborar planes de tratamiento para pacientes con ERC. Deben elegir la mejor opción según el riesgo y otros problemas de salud de cada paciente.
@@ -67,12 +74,12 @@ Patient: Gracias, doctor. Quiero cuidar mis riñones.
 
     </section>
 
-    <!-- English (always shown if provided) -->
-    <section class="card content">
-INGLÉS
+    <!-- English below -->
 
-(_No English content present_) 
-    </section>
+    <details class="card">
+      <summary>INGLÉS</summary>
+      <div class="subtle">(_No English content present_)</div>
+    </details>
   </main>
 
   <footer class="subtle">

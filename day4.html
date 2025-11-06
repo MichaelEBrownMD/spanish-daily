@@ -14,22 +14,29 @@
   h1 { font-size: 1.4rem; margin: 0 0 8px; }
   .subtle { opacity: 0.72; font-size: 0.95rem; }
   .card { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 14px; margin: 12px 0; }
-  /* Visual marking of difficult words (after upgrade) */
+
+  /* Tooltips: buttonized spans */
   .tip-word { all: unset; display: inline; position: relative; cursor: pointer;
     text-decoration: underline dotted; text-underline-offset: 3px;
     padding: 0 .1em; border-radius: .35em; background: rgba(255,235,59,.28); }
   .tooltip { position: fixed; padding: .48rem .6rem; background: rgba(0,0,0,.88); color: #fff;
     border-radius: .55rem; font-size: .95rem; line-height: 1.3; max-width: min(90vw, 26rem);
     z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
-  audio { width: 100%; margin-top: 8px; }
-  .download { display: inline-block; margin-top: 8px; }
 
-  /* Respect \n line breaks and improve readability (kept for safety) */
+  /* Respect \n breaks (kept for safety alongside <br>) */
   .content { white-space: pre-line; }
 
   /* Small visual polish */
   .card { margin-bottom: 1.5em; line-height: 1.6; }
   strong { display: inline-block; margin-top: .35em; }
+
+  /* Details styling for the English section */
+  details { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 12px; }
+  details + details, details + .card { margin-top: 12px; }
+  summary { cursor: pointer; font-weight: 600; }
+  summary::marker { content: ""; }
+  summary::after { content: " ▸"; }
+  details[open] summary::after { content: " ▾"; }
 </style>
 </head>
 <body>
@@ -39,16 +46,13 @@
   </header>
 
   <main>
+    <!-- Spanish first -->
     <section class="card content">
 HISTORIA<br><br>Nuevas reglas para el <span title="treatment">tratamiento</span> de la <span title="chronic">enfermedad</span> renal crónica (<span title="CKD">ERC</span>) se han establecido en las guías <span title="guidelines">KDIGO</span> 2024. Hablan sobre el papel de los inhibidores de SGLT2 (<span title="SGLT2 inhibitors">iSGLT2</span>) y los agonistas del receptor GLP-1 (<span title="GLP-1 receptor agonists">AR GLP-1</span>) para retrasar la ERC y reducir los riesgos de enfermedades cardíacas. 1. Las reglas KDIGO 2024 sugieren usar iSGLT2 en pacientes con ERC. Esto incluye a quienes no tienen diabetes. Los iSGLT2 ayudan a proteger los <span title="kidneys">riñones</span> y el <span title="heart">corazón</span>. 2. Los AR GLP-1 son buenos para pacientes con ERC y diabetes tipo 2. Ayudan a controlar el <span title="blood sugar">azúcar en sangre</span> y a reducir las enfermedades cardíacas. 3. Tanto los iSGLT2 como los AR GLP-1 han demostrado retrasar la ERC y disminuir la <span title="albumin in urine">albuminuria</span>. 4. Las reglas sugieren iniciar iSGLT2 en pacientes con un <span title="estimated glomerular filtration rate">eGFR</span> ≥20 mL/min/1.73 m². Los AR GLP-1 deben iniciarse en quienes tengan un eGFR ≥30 mL/min/1.73 m². 5. Los médicos deben vigilar los <span title="side effects">efectos secundarios</span>. Estos pueden incluir infecciones <span title="genital">genitales</span> con iSGLT2 y problemas <span title="stomach">estomacales</span> con AR GLP-1. 6. Las reglas KDIGO enfatizan un <span title="team approach">enfoque en equipo</span>. Esto incluye el uso de estos medicamentos junto con cambios en el <span title="lifestyle">estilo de vida</span> y el control de la <span title="blood pressure">presión arterial</span>. Qué significa esto para los médicos: Los médicos de <span title="primary care">atención primaria</span> deben considerar agregar iSGLT2 y AR GLP-1 a los planes de tratamiento para pacientes con ERC. Esto puede ayudar a mejorar la salud renal y cardíaca.<br>---<br>DIÁLOGO<br><br><strong>Narrador:</strong> Hoy, la Dra. Lin habla con el Sr. Kim sobre nuevos medicamentos para la ERC.<br><strong>Médico:</strong> Hola, Sr. Kim. Tengo nueva información sobre el <span title="care">cuidado</span> de sus riñones.<br><strong>Paciente:</strong> Hola, doctora. ¿Qué hay de nuevo?<br><strong>Médico:</strong> Ahora tenemos medicamentos llamados inhibidores de SGLT2. Ayudan a retrasar la enfermedad renal. También protegen su corazón.<br><strong>Paciente:</strong> No tengo diabetes. ¿Puedo usar este medicamento?<br><strong>Médico:</strong> Sí. Puede tomar inhibidores de SGLT2 si su eGFR es mayor de 20. Estos medicamentos funcionan para personas con o sin diabetes.<br><strong>Paciente:</strong> ¿Hay algún <span title="side effect">efecto secundario</span>?<br><strong>Médico:</strong> Con los inhibidores de SGLT2, puede tener más infecciones urinarias o <span title="genital">genitales</span>. Vamos a vigilar eso.<br><strong>Médico:</strong> Otro medicamento es el <span title="GLP-1 receptor agonist">agonista del receptor GLP-1</span>. Ayuda si tiene diabetes tipo 2.<br><strong>Paciente:</strong> Mi amigo tuvo <span title="stomach pain">dolor de estómago</span> con esto. ¿Es común?<br><strong>Médico:</strong> Sí, los agonistas del receptor GLP-1 pueden causar <span title="stomach upset">malestar estomacal</span>. Vamos a empezar con una dosis baja e ir despacio.<br><strong>Médico:</strong> También vamos a controlar su presión arterial y hablar sobre <span title="diet">alimentación</span> y <span title="exercise">ejercicio</span>.<br><strong>Paciente:</strong> Gracias, doctora. Quiero mantener mis riñones fuertes.<br>
     </section>
 
-    <section class="card">
-      <strong>Audio</strong>
-      <div class="subtle">3 voces (Narrador · Médico · Paciente)</div>
-      <audio controls preload="none" src="/audio/2025-11-06.mp3"></audio>
-      <div><a class="download" href="/audio/2025-11-06.mp3" download>Descargar MP3 · Nov 6, 2025</a></div>
-    </section>
+    <!-- Collapsible English below -->
+    
   </main>
 
   <footer class="subtle">

@@ -1,5 +1,130 @@
 <!doctype html>
-<meta charset="utf-8">
-<title>Seed</title>
-<h1>Seeded placeholder</h1>
-<p>This will be overwritten by n8n.</p>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish Daily – Nov 8, 2025</title>
+<meta name="color-scheme" content="light dark" />
+<style>
+  :root { --maxw: 800px; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; padding: 0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; line-height: 1.6; font-size: 18px; }
+  header, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+  header { padding-top: 20px; }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; }
+  .subtle { opacity: 0.72; font-size: 0.95rem; }
+  .card { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 14px; margin: 12px 0; }
+  .tip-word { all: unset; display: inline; position: relative; cursor: pointer;
+    text-decoration: underline dotted; text-underline-offset: 3px;
+    padding: 0 .1em; border-radius: .35em; background: rgba(255,235,59,.28); }
+  .tooltip { position: fixed; padding: .48rem .6rem; background: rgba(0,0,0,.88); color: #fff;
+    border-radius: .55rem; font-size: .95rem; line-height: 1.3; max-width: min(90vw, 26rem);
+    z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  .content { white-space: pre-line; }
+  .card { margin-bottom: 1.5em; line-height: 1.6; }
+  strong { display: inline-block; margin-top: .35em; }
+  details { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 12px; }
+  details + details, details + .card { margin-top: 12px; }
+  summary { cursor: pointer; font-weight: 600; }
+  summary::marker { content: ""; }
+  summary::after { content: " ▸"; }
+  details[open] summary::after { content: " ▾"; }
+  .debug { position: fixed; bottom: 8px; right: 8px; font-size: 12px; opacity: .6; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Spanish Daily</h1>
+    <div class="subtle">Toca una palabra subrayada para ver la traducción. Toca fuera para cerrar.</div>
+  </header>
+
+  <main>
+    <!-- Spanish first -->
+    <section class="card content">
+STORY
+
+La <span title="diabetes">diabetes</span> y la <span title="obesity">obesidad</span> suelen presentarse juntas, lo que hace que el tratamiento sea complicado. Las guías de la <span title="American Diabetes Association">ADA</span> 2025 se enfocan en el peso y la protección de órganos, especialmente los <span title="kidneys">riñones</span>. Los agonistas de <span title="GLP-1">GLP-1</span> y <span title="tirzepatide">tirzepatida</span> ayudan con el peso y el azúcar en sangre. También protegen el <span title="heart">corazón</span> y los riñones. Los inhibidores de <span title="SGLT2">SGLT2</span> también protegen los riñones y el corazón. Comience con un agonista de GLP-1 o tirzepatida, luego agregue un inhibidor de SGLT2. Considere la salud <span title="kidney">renal</span>, el riesgo <span title="cardiovascular">cardiovascular</span> y los objetivos de peso de cada paciente. De esta manera, podemos ayudar mejor a los pacientes con diabetes y obesidad.
+
+---
+DIALOGUE
+
+Narrator: La diabetes y la obesidad suelen ocurrir juntas.
+Physician: Su diabetes y su peso pueden hacer que el tratamiento sea más complejo.
+Patient: Quiero bajar de peso y mantener mis <span title="kidneys">riñones</span> sanos.
+Physician: Podemos comenzar con un agonista de GLP-1 o tirzepatida. Estos ayudan con el azúcar en sangre, el peso, el corazón y los riñones.
+Patient: ¿Voy a necesitar más <span title="medications">medicamentos</span> después?
+Physician: Si es necesario, podemos agregar <span title="inhibitors">inhibidores</span> de SGLT2 para proteger sus riñones y su corazón.
+
+    </section>
+
+    <!-- English below -->
+
+    <details open class="card content">
+      <summary>INGLÉS</summary>
+STORY
+
+Diabetes and obesity often come together, making treatment tricky. The ADA 2025 rules focus on weight and organ protection, especially for kidneys. GLP-1RA and tirzepatide help with weight and blood sugar. They also protect the heart and kidneys. SGLT2i also protect kidneys and heart. Start with GLP-1RA or tirzepatide, then add SGLT2i. Think about each patient's kidney health, heart risk, and weight goals. This way, we can best help patients with diabetes and obesity.
+
+---
+DIALOGUE
+
+Narrator: Diabetes and obesity often happen together. Physician: Your diabetes and weight can make treatment more complex. Patient: I want to lose weight and keep my kidneys safe. Physician: We can start with GLP-1RA or tirzepatide. These help with blood sugar, weight, heart, and kidneys. Patient: Will I need more medicine later? Physician: If needed, we can add SGLT2 inhibitors to protect your kidneys and heart.
+    </details>
+  </main>
+
+  <footer class="subtle">
+    <div>© Nov 8, 2025 · Mezra.AI · Practica todos los días.</div>
+  </footer>
+
+  <div class="debug">EN: found</div>
+
+<script>
+(function () {
+  document.querySelectorAll('.content').forEach(container => {
+    container.querySelectorAll('span[title]').forEach(span => {
+      const text = span.textContent;
+      const tip  = span.getAttribute('title');
+      const btn  = document.createElement('button');
+      btn.className = 'tip-word'; btn.type = 'button';
+      btn.textContent = text; btn.setAttribute('data-tip', tip);
+      span.replaceWith(btn);
+    });
+  });
+
+  let openTip = null;
+  function closeTip(){ if(openTip){ openTip.remove(); openTip = null; } }
+  function showTip(target){
+    closeTip();
+    const tipText = target.getAttribute('data-tip') || '';
+    if(!tipText) return;
+    const bubble = document.createElement('div');
+    bubble.className = 'tooltip';
+    bubble.textContent = tipText;
+    document.body.appendChild(bubble);
+    const r = target.getBoundingClientRect();
+    const m = 8, vw = innerWidth, vh = innerHeight;
+    const { width: tw, height: th } = bubble.getBoundingClientRect();
+    let left = r.left, top = r.bottom + m;
+    if (left + tw + m > vw) left = Math.max(m, vw - tw - m);
+    if (left < m) left = m;
+    if (top + th + m > vh) top = Math.max(m, r.top - th - m);
+    bubble.style.left = left + 'px';
+    bubble.style.top  = top + 'px';
+    openTip = bubble;
+  }
+
+  document.addEventListener('click', (e) => {
+    const word = e.target.closest('.tip-word');
+    if (word){ if (openTip) closeTip(); else showTip(word); e.stopPropagation(); }
+    else { closeTip(); }
+  });
+  document.addEventListener('touchstart', (e) => {
+    if (!e.target.closest('.tip-word')) closeTip();
+  }, { passive: true });
+  addEventListener('scroll', closeTip, { passive: true });
+  addEventListener('resize', closeTip);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeTip(); });
+}());
+</script>
+</body>
+</html>

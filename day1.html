@@ -1,5 +1,124 @@
 <!doctype html>
-<meta charset="utf-8">
-<title>Seed</title>
-<h1>Seeded placeholder</h1>
-<p>This will be overwritten by n8n.</p>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish Daily – Nov 10, 2025</title>
+<meta name="color-scheme" content="light dark" />
+<style>
+  :root { --maxw: 800px; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; padding: 0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; line-height: 1.6; font-size: 18px; }
+  header, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+  header { padding-top: 20px; }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; }
+  .subtle { opacity: 0.72; font-size: 0.95rem; }
+  .card { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 14px; margin: 12px 0; }
+  .tip-word { all: unset; display: inline; position: relative; cursor: pointer;
+    text-decoration: underline dotted; text-underline-offset: 3px;
+    padding: 0 .1em; border-radius: .35em; background: rgba(255,235,59,.28); }
+  .tooltip { position: fixed; padding: .48rem .6rem; background: rgba(0,0,0,.88); color: #fff;
+    border-radius: .55rem; font-size: .95rem; line-height: 1.3; max-width: min(90vw, 26rem);
+    z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  .content { white-space: pre-line; }
+  .card { margin-bottom: 1.5em; line-height: 1.6; }
+  strong { display: inline-block; margin-top: .35em; }
+  details { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 12px; }
+  details + details, details + .card { margin-top: 12px; }
+  summary { cursor: pointer; font-weight: 600; }
+  summary::marker { content: ""; }
+  summary::after { content: " ▸"; }
+  details[open] summary::after { content: " ▾"; }
+  .debug { position: fixed; bottom: 8px; right: 8px; font-size: 12px; opacity: .6; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Spanish Daily</h1>
+    <div class="subtle">Toca una palabra subrayada para ver la traducción. Toca fuera para cerrar.</div>
+  </header>
+
+  <main>
+    <!-- Spanish first -->
+    <section class="card content">
+STORY
+
+Detectar el <span title="cancer">cáncer</span> de <span title="cervix">cuello uterino</span> a tiempo es muy importante. Un grupo llamado el <span title="Task Force">Grupo de Trabajo</span> de Servicios Preventivos de los Estados Unidos está considerando un nuevo plan para 2024. Este plan podría permitir que las mujeres de 30 a 65 años se hagan la prueba del <span title="HPV">VPH</span> ellas mismas en las clínicas. El nuevo plan indica que tanto los <span title="doctors">médicos</span> como las <span title="patients">pacientes</span> pueden recolectar muestras de VPH. Esto facilita la realización de la prueba. Los estudios muestran que la <span title="self-collection">auto-toma</span> de muestras es tan efectiva como la toma por parte del médico para detectar tipos peligrosos de VPH. Esto podría ayudar a que más mujeres se hagan la prueba, especialmente aquellas que tienen dificultades para ir a una clínica. Para hacerse la prueba, las mujeres usan un <span title="swab">hisopo</span> o <span title="brush">cepillo</span> para obtener una muestra del interior de su cuerpo. Luego, esta muestra se analiza para detectar tipos peligrosos de VPH. La <span title="American Cancer Society">Sociedad Americana del Cáncer</span> considera que la prueba de VPH es una buena manera de detectar el cáncer de cuello uterino. Sin embargo, las clínicas deben enseñar a las pacientes cómo recolectar las muestras correctamente. Los médicos deben prepararse para enseñar a las pacientes sobre la auto-toma de muestras para el VPH y así ayudar a detectar el cáncer de cuello uterino a tiempo.
+
+---
+DIALOGUE
+
+Narrator: Ahora algunas personas pueden hacerse la prueba del <span title="HPV">VPH</span> ellas mismas en la clínica. Physician: La <span title="self-collection">auto-toma</span> de la prueba de VPH puede ayudarnos a detectar el <span title="cancer">cáncer</span> de cuello uterino a tiempo. Physician: Le mostraré cómo usar el <span title="swab">hisopo</span> para recolectar la muestra. Patient: ¿Puedo hacerlo yo misma aquí? Patient: ¿Me dirá si lo hago bien?
+    </section>
+
+    <!-- English below -->
+
+    <details open class="card content">
+      <summary>INGLÉS</summary>
+STORY
+
+Checking for cervical cancer early is very important. A group called the U.S. Preventive Services Task Force is thinking about a new plan for 2024. This plan may let women aged 30–65 test themselves for HPV at clinics. The new plan says doctors and patients can both collect HPV samples. This makes testing easier. Studies show that self-testing is as good as doctor testing for finding dangerous types of HPV. This could help more women get tested, especially those who find it hard to get to a clinic. To test themselves, women use a swab or brush to get a sample from inside their body. This sample is then checked for dangerous types of HPV. The American Cancer Society thinks HPV testing is a good way to check for cervical cancer. But, clinics need to teach patients how to collect samples correctly. Doctors should get ready to teach patients about self-testing for HPV to help find cervical cancer early.
+
+---
+DIALOGUE
+
+Narrator: Some people can now test themselves for HPV at the clinic. Physician: HPV self-testing can help us find cervical cancer early. Physician: I will show you how to use the swab to collect the sample. Patient: Can I do it by myself here? Patient: Will you tell me if I do it right?
+    </details>
+  </main>
+
+  <footer class="subtle">
+    <div>© Nov 10, 2025 · Mezra.AI · Practica todos los días.</div>
+  </footer>
+
+  <div class="debug">EN: found</div>
+
+<script>
+(function () {
+  document.querySelectorAll('.content').forEach(container => {
+    container.querySelectorAll('span[title]').forEach(span => {
+      const text = span.textContent;
+      const tip  = span.getAttribute('title');
+      const btn  = document.createElement('button');
+      btn.className = 'tip-word'; btn.type = 'button';
+      btn.textContent = text; btn.setAttribute('data-tip', tip);
+      span.replaceWith(btn);
+    });
+  });
+
+  let openTip = null;
+  function closeTip(){ if(openTip){ openTip.remove(); openTip = null; } }
+  function showTip(target){
+    closeTip();
+    const tipText = target.getAttribute('data-tip') || '';
+    if(!tipText) return;
+    const bubble = document.createElement('div');
+    bubble.className = 'tooltip';
+    bubble.textContent = tipText;
+    document.body.appendChild(bubble);
+    const r = target.getBoundingClientRect();
+    const m = 8, vw = innerWidth, vh = innerHeight;
+    const { width: tw, height: th } = bubble.getBoundingClientRect();
+    let left = r.left, top = r.bottom + m;
+    if (left + tw + m > vw) left = Math.max(m, vw - tw - m);
+    if (left < m) left = m;
+    if (top + th + m > vh) top = Math.max(m, r.top - th - m);
+    bubble.style.left = left + 'px';
+    bubble.style.top  = top + 'px';
+    openTip = bubble;
+  }
+
+  document.addEventListener('click', (e) => {
+    const word = e.target.closest('.tip-word');
+    if (word){ if (openTip) closeTip(); else showTip(word); e.stopPropagation(); }
+    else { closeTip(); }
+  });
+  document.addEventListener('touchstart', (e) => {
+    if (!e.target.closest('.tip-word')) closeTip();
+  }, { passive: true });
+  addEventListener('scroll', closeTip, { passive: true });
+  addEventListener('resize', closeTip);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeTip(); });
+}());
+</script>
+</body>
+</html>

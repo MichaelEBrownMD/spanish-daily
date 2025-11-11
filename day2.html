@@ -1,5 +1,129 @@
 <!doctype html>
-<meta charset="utf-8">
-<title>Seed</title>
-<h1>Seeded placeholder</h1>
-<p>This will be overwritten by n8n.</p>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spanish Daily – Nov 11, 2025</title>
+<meta name="color-scheme" content="light dark" />
+<style>
+  :root { --maxw: 800px; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; padding: 0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; line-height: 1.6; font-size: 18px; }
+  header, main, footer { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+  header { padding-top: 20px; }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; }
+  .subtle { opacity: 0.72; font-size: 0.95rem; }
+  .card { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 14px; margin: 12px 0; }
+  .tip-word { all: unset; display: inline; position: relative; cursor: pointer;
+    text-decoration: underline dotted; text-underline-offset: 3px;
+    padding: 0 .1em; border-radius: .35em; background: rgba(255,235,59,.28); }
+  .tooltip { position: fixed; padding: .48rem .6rem; background: rgba(0,0,0,.88); color: #fff;
+    border-radius: .55rem; font-size: .95rem; line-height: 1.3; max-width: min(90vw, 26rem);
+    z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  .content { white-space: pre-line; }
+  .card { margin-bottom: 1.5em; line-height: 1.6; }
+  strong { display: inline-block; margin-top: .35em; }
+  details { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 12px; }
+  details + details, details + .card { margin-top: 12px; }
+  summary { cursor: pointer; font-weight: 600; }
+  summary::marker { content: ""; }
+  summary::after { content: " ▸"; }
+  details[open] summary::after { content: " ▾"; }
+  .debug { position: fixed; bottom: 8px; right: 8px; font-size: 12px; opacity: .6; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Spanish Daily</h1>
+    <div class="subtle">Toca una palabra subrayada para ver la traducción. Toca fuera para cerrar.</div>
+  </header>
+
+  <main>
+    <!-- Spanish first -->
+    <section class="card content">
+STORY
+
+Revisar para detectar <span title="cervical">cuello uterino</span> es muy importante. El Grupo de Trabajo de Servicios Preventivos de los <span title="United States">Estados Unidos</span> (USPSTF) está estableciendo nuevas reglas para 2024. Estas reglas indican que las mujeres de 30 a 65 años pueden hacerse ellas mismas la prueba del <span title="HPV">VPH</span>, un virus que puede causar cáncer de <span title="cervical">cuello uterino</span>. Esto puede ser tan efectivo como si el médico realiza la prueba. Podría ayudar a que más mujeres se hagan el examen.
+
+---
+DIALOGUE
+
+Narrator: Hoy hablamos sobre una nueva forma de detectar el cáncer de <span title="cervical">cuello uterino</span>.
+Physician: Hay una nueva prueba. Ahora usted puede tomar su propia muestra para el <span title="HPV">VPH</span>.
+Patient: ¿Tengo que ir a la <span title="clinic">clínica</span> para hacerme esta prueba?
+Physician: No, usted puede hacerlo en casa. Es tan confiable como lo que hacemos aquí.
+Patient: Eso suena fácil. Quiero intentarlo.
+
+    </section>
+
+    <!-- English below -->
+
+    <details open class="card content">
+      <summary>INGLÉS</summary>
+STORY
+
+Checking for cervical cancer is very important. The U.S. Preventive Services Task Force (USPSTF) is making new rules for 2024. These rules say women aged 30-65 can do their own test for HPV, a virus that can cause cervical cancer. This can be as good as a doctor doing the test. It might help more women get tested.
+
+---
+DIALOGUE
+
+Narrator: Today, we talk about a new way to check for cervical cancer. Physician: There is a new test. You can now collect your own sample for HPV. Patient: Do I have to go to the clinic for this test? Physician: No, you can do it yourself at home. It is as good as what we do here. Patient: That sounds easy. I want to try it.
+    </details>
+  </main>
+
+  <footer class="subtle">
+    <div>© Nov 11, 2025 · Mezra.AI · Practica todos los días.</div>
+  </footer>
+
+  <div class="debug">EN: found</div>
+
+<script>
+(function () {
+  document.querySelectorAll('.content').forEach(container => {
+    container.querySelectorAll('span[title]').forEach(span => {
+      const text = span.textContent;
+      const tip  = span.getAttribute('title');
+      const btn  = document.createElement('button');
+      btn.className = 'tip-word'; btn.type = 'button';
+      btn.textContent = text; btn.setAttribute('data-tip', tip);
+      span.replaceWith(btn);
+    });
+  });
+
+  let openTip = null;
+  function closeTip(){ if(openTip){ openTip.remove(); openTip = null; } }
+  function showTip(target){
+    closeTip();
+    const tipText = target.getAttribute('data-tip') || '';
+    if(!tipText) return;
+    const bubble = document.createElement('div');
+    bubble.className = 'tooltip';
+    bubble.textContent = tipText;
+    document.body.appendChild(bubble);
+    const r = target.getBoundingClientRect();
+    const m = 8, vw = innerWidth, vh = innerHeight;
+    const { width: tw, height: th } = bubble.getBoundingClientRect();
+    let left = r.left, top = r.bottom + m;
+    if (left + tw + m > vw) left = Math.max(m, vw - tw - m);
+    if (left < m) left = m;
+    if (top + th + m > vh) top = Math.max(m, r.top - th - m);
+    bubble.style.left = left + 'px';
+    bubble.style.top  = top + 'px';
+    openTip = bubble;
+  }
+
+  document.addEventListener('click', (e) => {
+    const word = e.target.closest('.tip-word');
+    if (word){ if (openTip) closeTip(); else showTip(word); e.stopPropagation(); }
+    else { closeTip(); }
+  });
+  document.addEventListener('touchstart', (e) => {
+    if (!e.target.closest('.tip-word')) closeTip();
+  }, { passive: true });
+  addEventListener('scroll', closeTip, { passive: true });
+  addEventListener('resize', closeTip);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeTip(); });
+}());
+</script>
+</body>
+</html>

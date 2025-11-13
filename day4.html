@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Spanish Daily – Nov 6, 2025</title>
+<title>Spanish Daily – Nov 13, 2025</title>
 <meta name="color-scheme" content="light dark" />
 <style>
   :root { --maxw: 800px; }
@@ -14,30 +14,22 @@
   h1 { font-size: 1.4rem; margin: 0 0 8px; }
   .subtle { opacity: 0.72; font-size: 0.95rem; }
   .card { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 14px; margin: 12px 0; }
-
-  /* Tooltip word buttons */
   .tip-word { all: unset; display: inline; position: relative; cursor: pointer;
     text-decoration: underline dotted; text-underline-offset: 3px;
     padding: 0 .1em; border-radius: .35em; background: rgba(255,235,59,.28); }
   .tooltip { position: fixed; padding: .48rem .6rem; background: rgba(0,0,0,.88); color: #fff;
     border-radius: .55rem; font-size: .95rem; line-height: 1.3; max-width: min(90vw, 26rem);
     z-index: 9999; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
-
-  /* Make 
- line breaks show as new lines in both ES and EN blocks */
   .content { white-space: pre-line; }
-
-  /* Small visual polish */
   .card { margin-bottom: 1.5em; line-height: 1.6; }
   strong { display: inline-block; margin-top: .35em; }
-
-  /* Details styling (English block) */
   details { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 12px; }
   details + details, details + .card { margin-top: 12px; }
   summary { cursor: pointer; font-weight: 600; }
   summary::marker { content: ""; }
   summary::after { content: " ▸"; }
   details[open] summary::after { content: " ▾"; }
+  .debug { position: fixed; bottom: 8px; right: 8px; font-size: 12px; opacity: .6; }
 </style>
 </head>
 <body>
@@ -49,23 +41,37 @@
   <main>
     <!-- Spanish first -->
     <section class="card content">
-<p>(No content)</p>
+STORY
+
+La <span title="atrial fibrillation">fibrilación auricular</span> (FA) puede causar <span title="stroke">accidente cerebrovascular</span>. Para prevenir esto, los médicos usan <span title="devices">dispositivos</span>. Las <span title="guidelines">guías</span> europeas de <span title="cardiology">cardiología</span> de 2024 sugieren usar un dispositivo llamado <span title="left atrial appendage occlusion">LAAO</span> para pacientes que no pueden tomar <span title="anticoagulant medications">medicamentos anticoagulantes</span>. El dispositivo WATCHMAN FLX es seguro y funciona bien. Monitores <span title="cardiac">cardíacos</span> portátiles como el Apple Watch pueden detectar la FA. La <span title="American Heart Association">Asociación Americana del Corazón</span> indica que el LAAO es adecuado para algunos pacientes. La <span title="artificial intelligence">inteligencia artificial</span> podría ayudar a predecir el accidente cerebrovascular relacionado con la FA. Los médicos deben considerar el uso de estos dispositivos en pacientes con FA.
+
+DIALOGUE
+
+Narrator: Algunas personas con <span title="atrial fibrillation">fibrilación auricular</span> no pueden tomar <span title="anticoagulant medications">medicamentos anticoagulantes</span>. Physician: Podemos usar un dispositivo llamado <span title="left atrial appendage occlusion">LAAO</span> para reducir su riesgo de <span title="stroke">accidente cerebrovascular</span>. Patient: ¿Es seguro el LAAO para mí? Physician: Sí, el dispositivo WATCHMAN FLX es seguro y funciona bien. Patient: ¿Ayudará a prevenir un <span title="stroke">accidente cerebrovascular</span>?
     </section>
 
     <!-- English below -->
 
-    <details class="card">
+    <details open class="card content">
       <summary>INGLÉS</summary>
-      <div class="subtle">(_No English content present_)</div>
+STORY
+
+Atrial fibrillation (AF) can cause stroke. To stop this, doctors use devices. The 2024 European heart rules suggest using a device called LAAO for patients who can't take blood-thinning medicine. The WATCHMAN FLX device is safe and works well. Wearable heart monitors like the Apple Watch can find AF. The American Heart Association says LAAO is good for some patients. Artificial intelligence might help predict AF-related stroke. Doctors should think about using these devices for AF patients.
+
+---
+DIALOGUE
+
+Narrator: Some people with atrial fibrillation cannot take blood-thinning medicine. Physician: We can use a device called LAAO to lower your stroke risk. Patient: Is LAAO safe for me? Physician: Yes, the WATCHMAN FLX device is safe and works well. Patient: Will it help stop a stroke?
     </details>
   </main>
 
   <footer class="subtle">
-    <div>© Nov 6, 2025 · Mezra.AI · Practica todos los días.</div>
+    <div>© Nov 13, 2025 · Mezra.AI · Practica todos los días.</div>
   </footer>
 
+  <div class="debug">EN: found</div>
+
 <script>
-// Upgrade <span title="…">…</span> into buttons with floating tooltips (iPhone-safe)
 (function () {
   document.querySelectorAll('.content').forEach(container => {
     container.querySelectorAll('span[title]').forEach(span => {
